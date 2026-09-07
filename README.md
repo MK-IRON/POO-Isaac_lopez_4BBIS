@@ -12,6 +12,4 @@
 
 ---
 
-✨ *Proyecto académico* ✨
-
 </div>
