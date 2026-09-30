@@ -13,7 +13,7 @@ public abstract class Mob {
         numberEntitys++;
     }
 
-    public abstract void attack();
+    public abstract String attack();
     public abstract int getId();
 
     //============

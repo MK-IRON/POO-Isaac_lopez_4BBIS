@@ -7,9 +7,9 @@ public class Creeper extends Mob {
         super("Creeper", 80, 15);
         this.id = Mob.getNumberEntitys();
     }
-    public void attack(){
-        System.out.println("...💥");
+    public String attack(){
         die();
+        return"...💥";
     }
 
     public int getId() {

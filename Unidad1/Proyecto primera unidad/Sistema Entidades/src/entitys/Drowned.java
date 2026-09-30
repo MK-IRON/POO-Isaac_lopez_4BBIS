@@ -14,7 +14,7 @@ public class Drowned extends Zombie{
     public int getId() {
         return id;
     }
-    public void attack(){
-        System.out.println("Drowned give us a bite...Auch");
+    public String attack(){
+        return"Drowned give us a bite...Auch";
     }
 }

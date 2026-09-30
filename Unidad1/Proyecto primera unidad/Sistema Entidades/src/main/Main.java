@@ -23,7 +23,7 @@ public class Main {
             killMob(mobList, sc);
             }
             else if(opt == 3){
-
+                describeMob(mobList, sc);
             }
             else if(opt == 4){
                 getMobs(mobList, sc);
@@ -82,16 +82,32 @@ public class Main {
         }
     }
 
-    public static void describeMob(){
-
-    }
-
-    public static void getMobs(List<Mob> mobList, Scanner sc){
-        System.out.println("Number of entitys: " + Mob.getNumberEntitys());
-        for(int i = 0; i < mobList.size(); i++){
-            System.out.println(mobList.get(i).getName() + " ID: " + mobList.get(i).getId());
+    public static void describeMob(List<Mob>mobList, Scanner sc) {
+        if (Mob.getNumberEntitys() > 0) {
+            getMobs(mobList, sc);
+            System.out.println("Select the mob ID: ");
+            int mobId = sc.nextInt();
+            System.out.println("Name: " + mobList.get(mobId-1).getName()+
+                    "\nSpeed: " + mobList.get(mobId-1).getSpeed()+
+                    "\nAlive: " + mobList.get(mobId-1).getState()+
+                    "\nLife: " + mobList.get(mobId-1).getHp()+
+                    "\nAttack: " + mobList.get(mobId-1).attack());
         }
-        System.out.println("Press enter to continue");
-        sc.nextLine();
+        else {
+            System.out.println("There is no mobs aviable");
+        }
+    }
+    public static void getMobs(List<Mob> mobList, Scanner sc){
+        if(Mob.getNumberEntitys()>0){
+            System.out.println("Number of entitys: " + Mob.getNumberEntitys());
+            for (Mob mob : mobList) {
+                System.out.println(mob.getName() + " ID: " + mob.getId());
+            }
+            System.out.println("Press enter to continue");
+            sc.nextLine();
+        }
+        else{
+            System.out.println("There is no mobs aviable");
+        }
     }
 }

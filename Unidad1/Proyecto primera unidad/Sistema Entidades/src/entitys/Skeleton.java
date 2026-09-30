@@ -9,8 +9,9 @@ public class Skeleton extends Mob{
         this.id = Mob.getNumberEntitys();
     }
 
-    public void attack() {
+    public String attack() {
         this.arrows--;
+        return "Skeleton shoot an arrow";
     }
 
     public int getId() {

@@ -14,8 +14,8 @@ public class Zombie extends Mob {
         super(name,hp,speed);
     }
 
-    public void attack(){
-        System.out.println("Zombie give us a bite...Auch!");
+    public String attack(){
+        return "Zombie give us a bite...Auch!";
     }
 
     public int getId() {
